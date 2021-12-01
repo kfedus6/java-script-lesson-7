@@ -1,0 +1,20 @@
+main > div.main > img {
+   height: 400px;
+}
+
+main > div.main > div > p {
+   padding-right: 800px;
+}
+
+main > div.main > div > table {
+   border: 1px solid;
+}
+
+main > div.footer {
+   margin-top: 10px;
+   display: grid;
+}
+
+main > div.footer > a {
+   margin-top: 10px;
+}
