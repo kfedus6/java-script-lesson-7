@@ -1,6 +1,3 @@
-
-
-
 //window.alert("test")
 //window.document.write("test")
 /*
@@ -44,3 +41,13 @@ for (item of document.body.childNodes) {
 //       l.style.background = 'red';
 //    }
 // }
+
+//DZ\\
+
+for (elem of document.body.children) {
+   console.log(elem)
+   for (l of elem.children) {
+      console.log(l)
+   }
+}
+
