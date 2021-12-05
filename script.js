@@ -99,25 +99,31 @@ for (item of elem) {
    console.log(item.innerHTML)
 }
 */
+//DZ\\
 
-// let elem = document.getElementsByName('search');
-// elem[0].style.fontSize = "30px";
-// elem[0].style.background = "red";
+const elemNameSerach = document.getElementsByName('search');
+elemNameSerach[0].style.fontSize = "30px";
+elemNameSerach[0].style.background = "red";
+elemNameSerach[0].lastElementChild.style.color = 'yellow';
+elemNameSerach[0].lastElementChild.style.background = 'green';
 
-// for (item of elem) {
-//    console.log(item)
-//    item[0].style.background = "yellow";
-//    item[1].style.background = "green";
-// }
-// console.log(elem)
+const tagName = elemNameSerach[0].getElementsByTagName('input');
+tagName[0].style.background = 'yellow'
 
+const elemNamePerson = document.getElementsByName('search-person');
+elemNamePerson[0].style.background = 'black';
 
-// let elem = document.getElementById('age-table');
-// elem.style.background = 'red';
-// console.log(elem)
+for (let i = 0; i < elemNamePerson.length; i++) {
+   elemNamePerson[i].style.color = 'red'
+   elemNamePerson[i].lastElementChild.style.color = 'blue';
+}
 
-// let elem = document.querySelectorAll('#age-list label');
-// for (item of elem) {
-//    item.style.color = 'red';
-// }
-// console.log(elem);
+const elemAgeTable = document.querySelector('#age-table');
+const tagTd = elemAgeTable.querySelectorAll('td');
+tagTd[0].style.color = 'yellow';
+tagTd[2].style.color = 'white';
+
+const elemAllLabel = document.querySelectorAll('#age-list label');
+for (item of elemAllLabel) {
+   item.style.color = 'blue';
+}
