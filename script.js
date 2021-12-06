@@ -101,11 +101,14 @@ for (item of elem) {
 */
 //DZ\\
 
+/*
 const elemNameSerach = document.getElementsByName('search');
 elemNameSerach[0].style.fontSize = "30px";
 elemNameSerach[0].style.background = "red";
 elemNameSerach[0].lastElementChild.style.color = 'yellow';
 elemNameSerach[0].lastElementChild.style.background = 'green';
+
+
 
 const tagName = elemNameSerach[0].getElementsByTagName('input');
 tagName[0].style.background = 'yellow'
@@ -127,3 +130,85 @@ const elemAllLabel = document.querySelectorAll('#age-list label');
 for (item of elemAllLabel) {
    item.style.color = 'blue';
 }
+*/
+
+/*
+const elem = document.querySelectorAll('#age-table input');
+let check = 0;
+for (item of elem) {
+   check++;
+   if (check % 2 == 0) {
+      item.style.background = 'black';
+   }
+}
+console.log(elem);
+*/
+
+/*
+elem.nodeType == 1 для узлов-элементов,
+elem.nodeType == 3 для текстовых узлов,
+elem.nodeType == 9 для объектов документа,
+*/
+
+//console.log(document.nodeType)
+
+
+/*
+document.body.innerHTML = "<div class='hello' style='font-size:30px'>hello</div>"
+document.body.innerHTML += "<p>text</p>"
+console.log(document.body.innerHTML);
+*/
+
+//console.log(document.body.innerHTML);
+//document.body.outerHTML += "<h1>blablabla</h1>"
+//console.log(document.body.outerHTML);
+
+/*
+let foo = (nameClass, size, color) => {
+   let b = document.body.outerHTML += `<div class="${nameClass}" style="width:${size}px; height:${size}px; background:${color}">text</div>`
+}
+
+foo("hello", "400", "red")
+foo("ttt", "250", "blue")
+*/
+
+//console.log(document.body.firstChild.nextSibling.nextSibling.data)
+
+//console.log(document.querySelector('.test').textContent)
+
+/*
+
+let q = prompt();
+let foo = (a) => {
+   let s = document.body.textContent += `${a}`
+}
+foo(q);
+*/
+
+//setTimeout
+//setInterval
+
+/*
+function hello(name) {
+   alert("hello");
+}
+*/
+
+//setTimeout((name)=>alert("hello",name),4000,"name")
+
+//myFunc = setTimeout(hello, 4000, "Dima");
+
+//let goId = setInterval(() => alert("hello"), 4000);
+//clearInterval(goId);
+
+
+document.getElementsByClassName('test')[0].hidden = false;
+
+
+/*
+   1)Создать эпилепсию. Когда включается сайт. Весь его задний фон должен меняться 10 разными цветами каждую 1 секунду.
+   2)Создать класс для генерации сложных объектов. див,p,img. Если div + 1 + 1 ввести текст     p изменить шрифт цвет   img ссылки поменять картинку размер картинки
+
+   ООП
+
+*/
