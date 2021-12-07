@@ -201,8 +201,7 @@ function hello(name) {
 //let goId = setInterval(() => alert("hello"), 4000);
 //clearInterval(goId);
 
-
-document.getElementsByClassName('test')[0].hidden = false;
+//document.getElementsByClassName('test')[0].hidden = false;
 
 
 /*
@@ -211,4 +210,64 @@ document.getElementsByClassName('test')[0].hidden = false;
 
    ООП
 
+*/
+
+//DZ\\
+/*
+const colors = ['red', 'black', 'white', 'green', 'pink', 'blue', 'yellow', 'brown', 'gray', 'orange', 'lime', 'blueviolet', 'cyan', 'coral'];
+
+function rand() {
+   let random = Math.floor(Math.random() * colors.length);
+   let randColors = document.body.style.background = colors[random];
+}
+
+let i = 0;
+
+let int = setInterval(() => {
+   rand()
+   i++;
+   if (i > 25) {
+      clearInterval(int)
+   }
+}, 500);
+*/
+
+/*
+class TagName {
+   constructor(tag, tagClass, tagId) {
+      this.tag = tag;
+      this.tagClass = tagClass;
+      this.tagId = tagId;
+   }
+   getAddTegName() {
+      document.body.innerHTML = this.tag;
+   }
+}
+
+let tag = document.body.innerHTML = '<div></div>'
+let d = document.querySelector('div');
+console.log(d)
+d.className = 'my-class'
+d.id = 'my-id'
+d.textContent = 'hello'
+
+
+class TagName extends TagDiv {
+   constructor(tag, tagClass, tagId) {
+      super(tag, tagClass, tagId)
+   }
+}
+
+class TagName extends TagP {
+   constructor(tag, tagClass, tagId) {
+      super(tag, tagClass, tagId)
+   }
+}
+
+class TagName extends TagImg {
+   constructor(tag, tagClass, tagId, src) {
+      super(tag, tagClass, tagId)
+      this.src = src;
+   }
+}
 */
