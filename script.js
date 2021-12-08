@@ -212,6 +212,36 @@ function hello(name) {
 
 */
 
+/*
+class block
+   type = ()  div / p / img
+
+
+
+create
+   if type == div
+      s = ''
+      prompt() количество дивов
+      for
+            prompt()
+      document.body.innerHTML += s
+
+   if type == p
+            ///
+
+   if type == img
+            ///
+
+create
+   if div
+      document.odt.
+
+
+block = new block(div
+block.create
+block.settype(p)
+block.create
+*/
 //DZ\\
 /*
 const colors = ['red', 'black', 'white', 'green', 'pink', 'blue', 'yellow', 'brown', 'gray', 'orange', 'lime', 'blueviolet', 'cyan', 'coral'];
@@ -271,3 +301,86 @@ class TagName extends TagImg {
    }
 }
 */
+
+/*
+document.body.myData = {
+   name: "MyData",
+   color: "red"
+}
+
+document.body.showNamePage = () => {
+   alert("This main page");
+}
+
+document.body.showNamePage();
+
+console.log(document.body.myData.color)
+*/
+
+
+//document.querySelector('input').type = "button";
+//console.log(document.querySelector('input').type)
+
+/*
+document.querySelector('input').setAttribute("myDate", "Hello")
+document.querySelector('input').removeAttribute('myDate')
+console.log(document.querySelector('input').hasAttribute('myDate'))
+console.log(document.querySelector('input').getAttribute('myDate'))
+*/
+
+/*
+for (let atr of document.querySelector('input').attributes) {
+   console.log(atr.name, atr.value)
+}
+*/
+/*
+let foo = () => {
+   let f = document.querySelectorAll('form input');
+   for (item of f) {
+      let atr = prompt();
+      let text = prompt();
+      item.setAttribute(atr, text);
+   }
+}
+foo()
+*/
+
+/*
+let div = document.createElement('div');
+div.className = "hello"
+div.style.background = 'red'
+div.innerHTML = '<del>Hello</del>'
+
+//document.body.append(div)
+//document.body.prepend(div)
+//document.querySelector('input').after(div);
+//document.querySelector('form').before(div);
+
+let form = document.querySelector('form').cloneNode(true)
+document.querySelector('form').remove();
+document.body.prepend(form);
+*/
+
+/*
+let fragment = new DocumentFragment();
+
+let div = document.createElement('div');
+div.className = "hello"
+div.style.background = 'red'
+div.innerHTML = '<del>Hello</del>'
+
+fragment.append(div);
+
+fragment.append(document.querySelector('input'))
+
+let h1 = document.createElement('h1');
+h1.textContent = "hello";
+
+fragment.append(h1);
+
+
+document.body.append(fragment);
+*/
+
+let date = new Date();
+date.get
