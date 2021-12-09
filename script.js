@@ -318,15 +318,15 @@ console.log(document.body.myData.color)
 */
 
 
-//document.querySelector('input').type = "button";
-//console.log(document.querySelector('input').type)
+// document.querySelector('input').type = "button";
+// console.log(document.querySelector('input').type)
 
-/*
-document.querySelector('input').setAttribute("myDate", "Hello")
-document.querySelector('input').removeAttribute('myDate')
-console.log(document.querySelector('input').hasAttribute('myDate'))
-console.log(document.querySelector('input').getAttribute('myDate'))
-*/
+
+// console.log(document.querySelector('input').setAttribute("myDate", "Hello"));
+// document.querySelector('input').removeAttribute('myDate')
+// console.log(document.querySelector('input').hasAttribute('myDate'))
+// console.log(document.querySelector('input').getAttribute('myDate'))
+
 
 /*
 for (let atr of document.querySelector('input').attributes) {
@@ -351,36 +351,44 @@ div.className = "hello"
 div.style.background = 'red'
 div.innerHTML = '<del>Hello</del>'
 
-//document.body.append(div)
-//document.body.prepend(div)
-//document.querySelector('input').after(div);
-//document.querySelector('form').before(div);
+document.body.append(div)
+document.body.prepend(div)
+document.querySelector('input').after(div);
+document.querySelector('form').before(div);
 
 let form = document.querySelector('form').cloneNode(true)
 document.querySelector('form').remove();
 document.body.prepend(form);
 */
 
+// let fragment = new DocumentFragment();
+
+// let div = document.createElement('div');
+// div.className = "hello"
+// div.style.background = 'red'
+// div.innerHTML = '<del>Hello</del>'
+
+// fragment.prepend(div);
+
+// let h1 = document.createElement('h1');
+// h1.textContent = "hello";
+
+// fragment.prepend(h1);
+
+// document.body.prepend(fragment);
+
 /*
-let fragment = new DocumentFragment();
-
-let div = document.createElement('div');
-div.className = "hello"
-div.style.background = 'red'
-div.innerHTML = '<del>Hello</del>'
-
-fragment.append(div);
-
-fragment.append(document.querySelector('input'))
-
-let h1 = document.createElement('h1');
-h1.textContent = "hello";
-
-fragment.append(h1);
-
-
-document.body.append(fragment);
-*/
-
 let date = new Date();
 date.get
+*/
+//DZ\\
+
+let date = new Date;
+date.setHours(12, 00, 06)
+const stopTime = setInterval(() => {
+   const times = document.getElementById("timer").innerHTML = new Date(date -= 1000).toLocaleTimeString();
+   if (times <= '12:00:00') {
+      clearInterval(stopTime)
+      document.querySelector('h1 span').style.display = 'unset'
+   }
+}, 1000);
