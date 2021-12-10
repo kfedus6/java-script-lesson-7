@@ -211,37 +211,6 @@ function hello(name) {
    ООП
 
 */
-
-/*
-class block
-   type = ()  div / p / img
-
-
-
-create
-   if type == div
-      s = ''
-      prompt() количество дивов
-      for
-            prompt()
-      document.body.innerHTML += s
-
-   if type == p
-            ///
-
-   if type == img
-            ///
-
-create
-   if div
-      document.odt.
-
-
-block = new block(div
-block.create
-block.settype(p)
-block.create
-*/
 //DZ\\
 /*
 const colors = ['red', 'black', 'white', 'green', 'pink', 'blue', 'yellow', 'brown', 'gray', 'orange', 'lime', 'blueviolet', 'cyan', 'coral'];
@@ -260,46 +229,6 @@ let int = setInterval(() => {
       clearInterval(int)
    }
 }, 500);
-*/
-
-/*
-class TagName {
-   constructor(tag, tagClass, tagId) {
-      this.tag = tag;
-      this.tagClass = tagClass;
-      this.tagId = tagId;
-   }
-   getAddTegName() {
-      document.body.innerHTML = this.tag;
-   }
-}
-
-let tag = document.body.innerHTML = '<div></div>'
-let d = document.querySelector('div');
-console.log(d)
-d.className = 'my-class'
-d.id = 'my-id'
-d.textContent = 'hello'
-
-
-class TagName extends TagDiv {
-   constructor(tag, tagClass, tagId) {
-      super(tag, tagClass, tagId)
-   }
-}
-
-class TagName extends TagP {
-   constructor(tag, tagClass, tagId) {
-      super(tag, tagClass, tagId)
-   }
-}
-
-class TagName extends TagImg {
-   constructor(tag, tagClass, tagId, src) {
-      super(tag, tagClass, tagId)
-      this.src = src;
-   }
-}
 */
 
 /*
@@ -382,7 +311,7 @@ let date = new Date();
 date.get
 */
 //DZ\\
-
+/*
 let date = new Date;
 date.setHours(12, 00, 06)
 const stopTime = setInterval(() => {
@@ -392,3 +321,44 @@ const stopTime = setInterval(() => {
       document.querySelector('h1 span').style.display = 'unset'
    }
 }, 1000);
+*/
+/*
+class Block {
+   constructor(type) {
+      this.type = type;
+   }
+   setRemove() {
+      let rem = prompt('какой тег хотите удалить?');
+      document.querySelector(rem).remove();
+   }
+   tagCreat() {
+      if (this.type == 'div') {
+         let question = prompt("сколько div вы хотите создать?");
+         for (let i = 0; i < question; i++) {
+            let tagDiv = document.createElement('div');
+            tagDiv.className = prompt('className');
+            document.body.prepend(tagDiv);
+         }
+      } else if (this.type == 'p') {
+         let question_Two = prompt("сколько p вы хотите создать?");
+         for (let i = 0; i < question_Two; i++) {
+            let tagP = document.createElement('p');
+            tagP.textContent = prompt('text');
+            document.body.prepend(tagP);
+         }
+      } else if (this.type == 'img') {
+         let question_Tree = prompt("сколько img вы хотите создать?");
+         for (let i = 0; i < question_Tree; i++) {
+            let tagImg = document.createElement('img');
+            tagImg.src = prompt('src');
+            tagImg.className = prompt('className');
+            tagImg.style = prompt(style);
+            document.body.prepend(tagImg);
+         }
+      }
+   }
+}
+let block = new Block(prompt('div/p/img?'));
+block.tagCreat();
+block.setRemove();
+*/
