@@ -313,7 +313,7 @@ date.get
 //DZ\\
 /*
 let date = new Date;
-date.setHours(12, 00, 06)
+date.setHours(12, 01, 06)
 const stopTime = setInterval(() => {
    const times = document.getElementById("timer").innerHTML = new Date(date -= 1000).toLocaleTimeString();
    if (times <= '12:00:00') {
@@ -361,4 +361,47 @@ class Block {
 let block = new Block(prompt('div/p/img?'));
 block.tagCreat();
 block.setRemove();
+*/
+
+
+/*
+   beforebegin - над
+   afterbegin - в. самый верх
+   beforeend - в. самый низ
+   afterend - после
+*/
+
+/*
+document.querySelector('.test').insertAdjacentHTML("afterend", "<h1>Hello</h1>")
+*/
+
+/*
+document.querySelector('.row').classList.add('blablabla')
+document.querySelector('.row').classList.toggle('123')
+console.log(document.querySelector('.row').classList.contains('blablabla'))
+console.log(document.querySelector('.row').classList)
+*/
+
+/*
+let go = () => {
+   document.body.style.background = "red";
+}
+*/
+/*
+let go = () => {
+   let text = document.querySelector('#text').value;
+   let cls = document.querySelector('#class').value;
+   console.log(text, cls)
+   let h = document.createElement('h1');
+   h.className = cls;
+   h.textContent = text;
+   document.body.append(h);
+}
+
+let rem = () => {
+   let classss = document.querySelector('#remove').value;
+   console.log(classss)
+   let s = document.querySelector(`.${classss}`);
+   s.remove();
+}
 */
