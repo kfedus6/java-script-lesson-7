@@ -360,7 +360,6 @@ class Block {
 }
 let block = new Block(prompt('div/p/img?'));
 block.tagCreat();
-block.setRemove();
 */
 
 
@@ -403,5 +402,80 @@ let rem = () => {
    console.log(classss)
    let s = document.querySelector(`.${classss}`);
    s.remove();
+}
+*/
+//DZ\\
+//зделать style
+/*
+let show = () => {
+   let text = document.querySelector('.text').value;
+   let stl = document.querySelector('.class').value;
+   let tagP = document.createElement('p');
+   tagP.className = stl;
+   tagP.textContent = text;
+   document.body.append(tagP);
+}
+
+let showStyle = () => {
+   let style_P = document.querySelector('.class-style').value;
+   let style_Show = document.querySelector(`${style_P}`);
+}
+*/
+
+/*
+document.body.style.background = 'red';
+document.body.style.marginBottom = '50px';
+
+document.querySelector('div').style.cssText = `
+   color:red;
+   font-size:30px;
+   background: blue;
+`
+*/
+
+/*
+let elem = document.querySelector('.test')
+let elemStyle = getComputedStyle(elem)
+console.log(elemStyle.backgroundColor);
+*/
+// Зделать акцию мигающу
+/*
+document.querySelector('.action').style.cssText = `
+width:100px;
+height:100px;
+background-color:red;
+position:fixed;
+right:25px
+`
+*/
+
+//let l = document.querySelector('.info');
+/*
+console.log(l.offsetTop)
+console.log(l.offsetLeft)
+
+console.log('\n');
+
+console.log(l.offsetWidth)
+console.log(l.offsetHeight)
+
+console.log('\n');
+
+console.log(l.clientLeft)
+console.log(l.clientTop)
+console.log(l.clientWidth)
+console.log(l.clientHeight)
+
+console.log('\n');
+
+console.log(l.scrollWidth)
+console.log(l.scrollHeight)
+*/
+/*
+//зделать кнопку развернуть и свернуть
+let show = () => {
+   let i = document.querySelector('.info');
+   let scr = i.scrollHeight;
+   i.style.height = `${scr}px`;
 }
 */
