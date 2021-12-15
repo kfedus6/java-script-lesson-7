@@ -404,24 +404,6 @@ let rem = () => {
    s.remove();
 }
 */
-//DZ\\
-//зделать style
-/*
-let show = () => {
-   let text = document.querySelector('.text').value;
-   let stl = document.querySelector('.class').value;
-   let tagP = document.createElement('p');
-   tagP.className = stl;
-   tagP.textContent = text;
-   document.body.append(tagP);
-}
-
-let showStyle = () => {
-   let style_P = document.querySelector('.class-style').value;
-   let style_Show = document.querySelector(`${style_P}`);
-}
-*/
-
 /*
 document.body.style.background = 'red';
 document.body.style.marginBottom = '50px';
@@ -438,19 +420,9 @@ let elem = document.querySelector('.test')
 let elemStyle = getComputedStyle(elem)
 console.log(elemStyle.backgroundColor);
 */
-// Зделать акцию мигающу
 /*
-document.querySelector('.action').style.cssText = `
-width:100px;
-height:100px;
-background-color:red;
-position:fixed;
-right:25px
-`
-*/
+let l = document.querySelector('.info');
 
-//let l = document.querySelector('.info');
-/*
 console.log(l.offsetTop)
 console.log(l.offsetLeft)
 
@@ -471,11 +443,53 @@ console.log('\n');
 console.log(l.scrollWidth)
 console.log(l.scrollHeight)
 */
+
+//DZ
 /*
-//зделать кнопку развернуть и свернуть
 let show = () => {
    let i = document.querySelector('.info');
-   let scr = i.scrollHeight;
-   i.style.height = `${scr}px`;
+   let scroll_H = i.scrollHeight;
+   let client_H = i.clientHeight;
+   if (client_H < scroll_H) {
+      i.style.height = `${scroll_H}px`;
+      document.querySelector('#text').textContent = 'свернуть';
+   } else if (scroll_H > '300') {
+      i.style.height = `200px`;
+      document.querySelector('#text').textContent = 'розвернуть';
+   }
 }
+*/
+//DZ\\
+/*
+let show = () => {
+   let text = document.querySelector('.text').value;
+   let nameCls = document.querySelector('.class').value;
+   let tagP = document.createElement('p');
+   tagP.className = nameCls;
+   tagP.textContent = text;
+   document.body.append(tagP);
+}
+
+let showStyle = () => {
+   let cls = document.querySelector('.class-style').value;
+   let stl = document.querySelector(`.${cls}`);
+   let text_Stl = document.querySelector('.text-style').value;
+   let text_Stl_Fs = document.querySelector('.text-style-fs').value;
+   stl.style.color = text_Stl;
+   stl.style.fontSize = `${text_Stl_Fs}px`;
+}
+*/
+//DZ
+/*
+function changestyle() {
+   let act = document.querySelector('.action');
+   if (act.style.visibility == 'visible') {
+      act.style.visibility = 'hidden';
+      setTimeout(changestyle, 700);
+   } else {
+      act.style.visibility = 'visible';
+      setTimeout(changestyle, 1000);
+   }
+}
+setTimeout(changestyle);
 */
