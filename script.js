@@ -443,22 +443,6 @@ console.log('\n');
 console.log(l.scrollWidth)
 console.log(l.scrollHeight)
 */
-
-//DZ
-/*
-let show = () => {
-   let i = document.querySelector('.info');
-   let scroll_H = i.scrollHeight;
-   let client_H = i.clientHeight;
-   if (client_H < scroll_H) {
-      i.style.height = `${scroll_H}px`;
-      document.querySelector('#text').textContent = 'свернуть';
-   } else if (scroll_H > '300') {
-      i.style.height = `200px`;
-      document.querySelector('#text').textContent = 'розвернуть';
-   }
-}
-*/
 //DZ\\
 /*
 let show = () => {
@@ -481,15 +465,77 @@ let showStyle = () => {
 */
 //DZ
 /*
+let show = () => {
+   let i = document.querySelector('.info');
+   let scroll_H = i.scrollHeight;
+   let client_H = i.clientHeight;
+   if (client_H < scroll_H) {
+      i.style.height = `${scroll_H}px`;
+      document.querySelector('#text').textContent = 'свернуть';
+   } else if (scroll_H > '300') {
+      i.style.height = `200px`;
+      document.querySelector('#text').textContent = 'розвернуть';
+   }
+}
+*/
+//DZ
+/*
 function changestyle() {
    let act = document.querySelector('.action');
-   if (act.style.visibility == 'visible') {
-      act.style.visibility = 'hidden';
-      setTimeout(changestyle, 700);
-   } else {
-      act.style.visibility = 'visible';
+   if (act.hidden == true) {
+      act.hidden = false;
       setTimeout(changestyle, 1000);
+   } else {
+      act.hidden = true;
+      setTimeout(changestyle, 700);
    }
 }
 setTimeout(changestyle);
+*/
+
+/*
+console.log(window.innerWidth)
+console.log(window.innerHeight)
+console.log(document.documentElement.clientWidth)
+*/
+
+// console.log(window.pageYOffset);
+
+// const go = () => {
+//    if (window.pageYOffset > 0) {
+//       window.scrollBy(0, -100);
+//       setTimeout(go, 0);
+//    }
+// }
+
+/*
+let int = setInterval(() => {
+   go();
+   if (window.pageYOffset == 0) {
+      clearInterval(int)
+   }
+}, 0)
+*/
+
+// let up = () => {
+//    window.scrollBy(0, -100)
+
+// }
+
+//document.body.style.overflow = 'hidden'
+/*
+let go = () => {
+   let block = document.querySelector('#block')
+   document.body.style.overflow = 'hidden'
+   block.hidden = false;
+}
+let exid = () => {
+   let ex = document.querySelector('#block');
+   ex.hidden = true;
+   document.body.style.overflow = '';
+}
+
+let infogo = () => {
+   document.querySelector('#info').scrollIntoView(true);
+}
 */
