@@ -539,3 +539,11 @@ let infogo = () => {
    document.querySelector('#info').scrollIntoView(true);
 }
 */
+//DZ
+
+let field = document.querySelector('.field');
+let rect = field.getBoundingClientRect();
+console.log(rect)
+let center = field.getBoundingClientRect().left + field.getBoundingClientRect().width / 2;
+console.log(center)
+let ball = document.querySelector('#center');
