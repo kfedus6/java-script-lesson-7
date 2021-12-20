@@ -547,3 +547,12 @@ console.log(rect)
 let center = field.getBoundingClientRect().left + field.getBoundingClientRect().width / 2;
 console.log(center)
 let ball = document.querySelector('#center');
+
+
+
+
+field.onclick = function (event) {
+   let value = event.clientX + ':' + event.clientY
+   console.log(value)
+
+}
