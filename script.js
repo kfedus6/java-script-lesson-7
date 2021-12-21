@@ -540,19 +540,108 @@ let infogo = () => {
 }
 */
 //DZ
-
+/*
 let field = document.querySelector('.field');
-let rect = field.getBoundingClientRect();
-console.log(rect)
-let center = field.getBoundingClientRect().left + field.getBoundingClientRect().width / 2;
-console.log(center)
-let ball = document.querySelector('#center');
+let ball = document.querySelector('#ball');
+ball.style.left = (field.clientWidth / 2) - (ball.offsetWidth / 2) + 'px';
+ball.style.top = (field.clientHeight / 2) - (ball.offsetHeight / 2) + 'px';
+*/
 
+/*
+let d = document.querySelector('div');
+function createMsg(elem, html) {
+   let message = document.createElement('div');
+   message.style.cssText = 'position:fixed; background:yellow';
 
+   let cord = d.getBoundingClientRect();
+   message.style.left = cord.left + 'px';
+   message.style.top = cord.bottom + 10 + 'px';
 
+   message.innerHTML = html;
+   return message;
+}
 
+let message = createMsg(d, "hello");
+document.body.append(message);
+setTimeout(() => message.remove(), 8000);
+*/
+
+/*
 field.onclick = function (event) {
    let value = event.clientX + ':' + event.clientY
    console.log(value)
+}
+*/
 
+//position:fixed clientX/clientY
+//position:absolute pageX/pageY
+
+/*
+
+dStyle = getComputedStyle(d)
+console.log(dStyle);
+
+console.log(d.getBoundingClientRect())
+*/
+
+//d = document.querySelector('div');
+
+/*
+let top_1 = d.getBoundingClientRect().top + window.pageYOffset
+console.log(top_1);
+
+let field = document.querySelector('.field');
+
+document.onclick = (e) => {
+   console.log(e.clientX, e.clientY)
+}
+*/
+/*
+
+События мыши:
+
+click – происходит, когда кликнули на элемент левой кнопкой мыши (на устройствах с сенсорными экранами оно происходит при касании).
+
+contextmenu – происходит, когда кликнули на элемент правой кнопкой мыши.
+
+mouseover / mouseout – когда мышь наводится на / покидает элемент.
+
+mousedown / mouseup – когда нажали / отжали кнопку мыши на элементе.
+
+mousemove – при движении мыши.
+
+События на элементах управления:
+
+submit – пользователь отправил форму <form>.
+focus – пользователь фокусируется на элементе, например нажимает на <input>.
+Клавиатурные события:
+
+keydown и keyup – когда пользователь нажимает / отпускает клавишу.
+События документа:
+
+DOMContentLoaded – когда HTML загружен и обработан, DOM документа полностью построен и доступен.
+*/
+/*
+let print = () => {
+   console.log("hello")
+}
+
+let info = () => {
+   console.log("goodbuy")
+}
+
+document.querySelector('.test').addEventListener('click', print);
+document.querySelector('.test').addEventListener('click', info);
+*/
+/*
+document.querySelector('.test').onclick = (event) => {
+   event.currentTarget.style.background = 'black';
+   console.log(event.type, event.clientX, event.clientY, event.currentTarget)
+}
+*/
+//DZ
+document.querySelector('.field').onclick = (event) => {
+   let ball = document.querySelector('#ball');
+   ball.style.left = event.clientX + 'px';
+   ball.style.top = event.clientY + 'px';
 }
