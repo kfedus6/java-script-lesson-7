@@ -284,7 +284,7 @@
    </div>
 -->
    <style>
-      .field {
+      #field {
          width: 460px;
          height: 550px;
          border: 5px solid black;
@@ -295,11 +295,14 @@
 
       #ball {
          position: absolute;
+         left: 0;
+         top: 0;
          width: 100px;
          height: 100px;
+         transition: all 1s;
       }
    </style>
-   <div class="field">
+   <div id="field">
       <img
          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Soccerball_mark.svg/1200px-Soccerball_mark.svg.png"
          id="ball">

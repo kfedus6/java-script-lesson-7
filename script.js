@@ -639,9 +639,21 @@ document.querySelector('.test').onclick = (event) => {
    console.log(event.type, event.clientX, event.clientY, event.currentTarget)
 }
 */
-//DZ
-document.querySelector('.field').onclick = (event) => {
+// //DZ
+/*
+document.querySelector('#field').onclick = (event) => {
+
+   let fieldCoords = document.querySelector('#field').getBoundingClientRect();
+
    let ball = document.querySelector('#ball');
-   ball.style.left = event.clientX + 'px';
-   ball.style.top = event.clientY + 'px';
+
+   let ballLeft = event.clientX - fieldCoords.left - ball.clientWidth / 2;
+   let ballTop = event.clientY - fieldCoords.top - ball.clientHeight / 2;
+
+   if (ballTop < 0) ballTop = 0;
+   if (ballLeft < 0) ballLeft = 0;
+
+   ball.style.left = ballLeft + 'px';
+   ball.style.top = ballTop + 'px';
 }
+*/
