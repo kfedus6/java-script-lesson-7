@@ -640,11 +640,13 @@ document.querySelector('.test').onclick = (event) => {
 }
 */
 // //DZ
+
+
 /*
 document.querySelector('#field').onclick = (event) => {
 
+   let field = document.querySelector('#field')
    let fieldCoords = document.querySelector('#field').getBoundingClientRect();
-
    let ball = document.querySelector('#ball');
 
    let ballLeft = event.clientX - fieldCoords.left - ball.clientWidth / 2;
@@ -652,9 +654,45 @@ document.querySelector('#field').onclick = (event) => {
 
    if (ballTop < 0) ballTop = 0;
    if (ballLeft < 0) ballLeft = 0;
-
+   if (ballTop + ball.clientHeight > field.clientHeight) {
+      ballTop = field.clientHeight - ball.clientHeight;
+   }
+   if (ballLeft + ball.clientWidth > field.clientWidth) {
+      ballLeft = field.clientWidth - ball.clientWidth;
+   }
    ball.style.left = ballLeft + 'px';
    ball.style.top = ballTop + 'px';
 }
 */
+
+let nums = document.querySelector('div').children;
+
+let isBlack = true;
+let game = document.querySelector('.game');
+
+game.onclick = (event) => {
+   let s = event.target.attributes.id.value;
+   console.log(s)
+   let background = getComputedStyle(event.target).backgroundColor;
+
+   if (isBlack && background != "rgb(255, 0, 0)") {
+      let balckPlayer = event.target.style.background = 'black';
+      isBlack = false;
+      if (s == '1') {
+         console.log('black win')
+      }
+
+   }
+   else if (background != "rgb(0, 0, 0)") {
+      let redPlayer = event.target.style.background = 'red';
+      isBlack = true;
+   }
+
+   for (let i = 0; i < nums.length; i++) {
+      let n = nums[i].attributes.id.value;
+      if (n == '1') {
+         console.log('black win')
+      }
+   }
+}
 
