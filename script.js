@@ -665,34 +665,22 @@ document.querySelector('#field').onclick = (event) => {
 }
 */
 
-let nums = document.querySelector('div').children;
-
 let isBlack = true;
-let game = document.querySelector('.game');
+const game = document.querySelector('.game');
+
+const black = "rgb(0, 0, 0)";
+const red = "rgb(255, 0, 0)";
 
 game.onclick = (event) => {
-   let s = event.target.attributes.id.value;
-   console.log(s)
-   let background = getComputedStyle(event.target).backgroundColor;
 
-   if (isBlack && background != "rgb(255, 0, 0)") {
-      let balckPlayer = event.target.style.background = 'black';
+   const background = getComputedStyle(event.target).backgroundColor;
+
+   if (isBlack && background != red) {
+      event.target.style.background = 'black';
       isBlack = false;
-      if (s == '1') {
-         console.log('black win')
-      }
-
    }
-   else if (background != "rgb(0, 0, 0)") {
-      let redPlayer = event.target.style.background = 'red';
+   else if (background != black) {
+      event.target.style.background = 'red';
       isBlack = true;
    }
-
-   for (let i = 0; i < nums.length; i++) {
-      let n = nums[i].attributes.id.value;
-      if (n == '1') {
-         console.log('black win')
-      }
-   }
 }
-
