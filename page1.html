@@ -309,7 +309,7 @@
          id="ball">
    </div>
    -->
-   <!---->
+   <!--
    <style>
       .game {
          width: 400px;
@@ -322,8 +322,11 @@
          width: 125px;
          height: 130px;
          border: 2px solid black;
-         font-size: 50px;
-         text-align: center;
+         cursor: pointer;
+      }
+
+      .num:hover {
+         background: rgb(236, 231, 231);
       }
    </style>
    <div class="game">
@@ -337,10 +340,89 @@
       <div class="num" id="7"></div>
       <div class="num" id="8"></div>
    </div>
+   <style>
+      .block {
+         border: 2px solid black;
+         position: relative;
+         padding: 25px;
+      }
+
+      .close {
+         position: absolute;
+         right: 5px;
+         top: 5px;
+         cursor: pointer;
+      }
+   </style>
+   <p class="block" style="background-color: red;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus
+      voluptas iure corporis
+      praesentium
+      obcaecati in voluptate possimus? Voluptatibus officiis incidunt libero eum. Repellat, sequi nostrum quae
+      laudantium non deserunt. Pariatur quod quae quaerat exercitationem odio et nemo voluptates facilis perferendis.
+      <span class="close">x</span>
+   </p>
+   <p class="block" style="background-color: rosybrown;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus
+      voluptas iure corporis praesentium
+      obcaecati in voluptate possimus? Voluptatibus officiis incidunt libero eum. Repellat, sequi nostrum quae
+      laudantium non deserunt. Pariatur quod quae quaerat exercitationem odio et nemo voluptates facilis perferendis.
+      <span class="close">x</span>
+   </p>
+   <p class="block" style="background-color: seagreen;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus
+      voluptas iure corporis praesentium
+      obcaecati in voluptate possimus? Voluptatibus officiis incidunt libero eum. Repellat, sequi nostrum quae
+      laudantium non deserunt. Pariatur quod quae quaerat exercitationem odio et nemo voluptates facilis perferendis.
+      <span class="close">x</span>
+   </p>
+   -->
    <!-- <div class="test"
       style="margin-top: 35px; margin-left: 100px; width: 10px; height: 10px; background-color: red;">
    </div>
+
+   <style>
+      form,
+      div,
+      p {
+         padding: 10px;
+         border: 1px solid red;
+      }
+   </style>
+
+   <form onclick="alert('form')">
+      FORM
+      <div onclick="() => {alert('div'); event.stopPropagation()}">
+         DIV
+         <p onclick="alert('p')">
+            P
+         </p>
+      </div>
+   </form>
    -->
+   <!--
+   <style>
+      td {
+         padding: 25px;
+         border: 5px solid black;
+      }
+   </style>
+
+   <table>
+      <tr>
+         <td>1</td>
+         <td>2</td>
+         <td>3</td>
+      </tr>
+      <tr>
+         <td>4</td>
+         <td>5</td>
+         <td>6</td>
+      </tr>
+      <tr>
+         <td>7</td>
+         <td>8</td>
+         <td>9</td>
+      </tr>
+   </table>
+-->
    <script src="script.js"></script>
 </body>
 

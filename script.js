@@ -664,7 +664,7 @@ document.querySelector('#field').onclick = (event) => {
    ball.style.top = ballTop + 'px';
 }
 */
-
+/*
 let isBlack = true;
 const game = document.querySelector('.game');
 
@@ -675,11 +675,13 @@ const red = "rgb(255, 0, 0)";
 
 const b = 'black';
 const r = 'red';
+let win = false;
 
+let count = 9;
 game.onclick = (event) => {
 
    const background = getComputedStyle(event.target).backgroundColor;
-
+   count--;
    if (isBlack && background != red) {
       event.target.style.background = 'black';
       isBlack = false;
@@ -689,51 +691,101 @@ game.onclick = (event) => {
       isBlack = true;
    }
    if (g[0].style.background == b && g[1].style.background == b && g[2].style.background == b) {
-      console.log('win black');
+      win = true
+      console.log('win black')
    }
    else if (g[0].style.background == r && g[1].style.background == r && g[2].style.background == r) {
+      win = true
       console.log('win red');
    }
    else if (g[3].style.background == b && g[4].style.background == b && g[5].style.background == b) {
+      win = true
       console.log('win black');
    }
    else if (g[3].style.background == r && g[4].style.background == r && g[5].style.background == r) {
+      win = true
       console.log('win red');
    }
    else if (g[6].style.background == b && g[7].style.background == b && g[8].style.background == b) {
+      win = true
       console.log('win black');
    }
    else if (g[6].style.background == r && g[7].style.background == r && g[8].style.background == r) {
+      win = true
       console.log('win red');
    }
    else if (g[0].style.background == b && g[4].style.background == b && g[8].style.background == b) {
+      win = true
       console.log('win black');
    }
    else if (g[0].style.background == r && g[4].style.background == r && g[8].style.background == r) {
+      win = true
       console.log('win red')
    }
    else if (g[2].style.background == b && g[4].style.background == b && g[6].style.background == b) {
+      win = true
       console.log('win black');
    }
    else if (g[2].style.background == r && g[4].style.background == r && g[6].style.background == r) {
+      win = true
       console.log('win red');
    }
    else if (g[0].style.background == b && g[3].style.background == b && g[6].style.background == b) {
+      win = true
       console.log('win black');
    }
    else if (g[0].style.background == r && g[3].style.background == r && g[6].style.background == r) {
+      win = true
       console.log('win red');
    }
    else if (g[1].style.background == b && g[4].style.background == b && g[7].style.background == b) {
+      win = true
       console.log('win black');
    }
    else if (g[1].style.background == r && g[4].style.background == r && g[7].style.background == r) {
+      win = true
       console.log('win red');
    }
    else if (g[2].style.background == b && g[5].style.background == b && g[8].style.background == b) {
+      win = true
       console.log('win black');
    }
    else if (g[2].style.background == r && g[5].style.background == r && g[8].style.background == r) {
+      win = true
       console.log('win red');
    }
+
+   if (win == true) {
+      for (let i = 0; i < g.length; i++) {
+         g[i].style.background = '';
+      }
+      win = false;
+   } else if (count == 0) {
+      for (let i = 0; i < g.length; i++) {
+         g[i].style.background = '';
+      }
+      count = 0
+   }
 }
+*/
+
+/*
+let close = document.querySelectorAll('.close');
+let block = document.querySelectorAll('.block');
+
+for (let i = 0; i < close.length; i++) {
+   close[i].onclick = () => {
+      block[i].remove();
+   }
+}
+*/
+/*
+let prevTD;
+document.querySelector('table').onclick = (e) => {
+   if (prevTD != undefined) {
+      prevTD.style.background = 'white'
+   }
+   e.target.style.background = 'red';
+   prevTD = e.target
+}
+*/
