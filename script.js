@@ -668,8 +668,13 @@ document.querySelector('#field').onclick = (event) => {
 let isBlack = true;
 const game = document.querySelector('.game');
 
+let g = game.children;
+
 const black = "rgb(0, 0, 0)";
 const red = "rgb(255, 0, 0)";
+
+const b = 'black';
+const r = 'red';
 
 game.onclick = (event) => {
 
@@ -682,5 +687,53 @@ game.onclick = (event) => {
    else if (background != black) {
       event.target.style.background = 'red';
       isBlack = true;
+   }
+   if (g[0].style.background == b && g[1].style.background == b && g[2].style.background == b) {
+      console.log('win black');
+   }
+   else if (g[0].style.background == r && g[1].style.background == r && g[2].style.background == r) {
+      console.log('win red');
+   }
+   else if (g[3].style.background == b && g[4].style.background == b && g[5].style.background == b) {
+      console.log('win black');
+   }
+   else if (g[3].style.background == r && g[4].style.background == r && g[5].style.background == r) {
+      console.log('win red');
+   }
+   else if (g[6].style.background == b && g[7].style.background == b && g[8].style.background == b) {
+      console.log('win black');
+   }
+   else if (g[6].style.background == r && g[7].style.background == r && g[8].style.background == r) {
+      console.log('win red');
+   }
+   else if (g[0].style.background == b && g[4].style.background == b && g[8].style.background == b) {
+      console.log('win black');
+   }
+   else if (g[0].style.background == r && g[4].style.background == r && g[8].style.background == r) {
+      console.log('win red')
+   }
+   else if (g[2].style.background == b && g[4].style.background == b && g[6].style.background == b) {
+      console.log('win black');
+   }
+   else if (g[2].style.background == r && g[4].style.background == r && g[6].style.background == r) {
+      console.log('win red');
+   }
+   else if (g[0].style.background == b && g[3].style.background == b && g[6].style.background == b) {
+      console.log('win black');
+   }
+   else if (g[0].style.background == r && g[3].style.background == r && g[6].style.background == r) {
+      console.log('win red');
+   }
+   else if (g[1].style.background == b && g[4].style.background == b && g[7].style.background == b) {
+      console.log('win black');
+   }
+   else if (g[1].style.background == r && g[4].style.background == r && g[7].style.background == r) {
+      console.log('win red');
+   }
+   else if (g[2].style.background == b && g[5].style.background == b && g[8].style.background == b) {
+      console.log('win black');
+   }
+   else if (g[2].style.background == r && g[5].style.background == r && g[8].style.background == r) {
+      console.log('win red');
    }
 }
