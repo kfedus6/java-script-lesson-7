@@ -789,3 +789,13 @@ document.querySelector('table').onclick = (e) => {
    prevTD = e.target
 }
 */
+//gallery cats
+
+let mainImg = document.querySelector('#catImg');
+let galleryCat = document.querySelector('.gallery');
+
+galleryCat.onclick = (e) => {
+   if (e.target.tagName == 'IMG') {
+      mainImg.src = e.target.src;
+   }
+}
