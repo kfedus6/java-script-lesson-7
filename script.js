@@ -790,12 +790,88 @@ document.querySelector('table').onclick = (e) => {
 }
 */
 //gallery cats
-
+/*
 let mainImg = document.querySelector('#catImg');
 let galleryCat = document.querySelector('.gallery');
 
 galleryCat.onclick = (e) => {
-   if (e.target.tagName == 'IMG') {
-      mainImg.src = e.target.src;
+   if (e.target.tagName == 'IMG') mainImg.src = e.target.src;
+}
+*/
+
+/*
+document.querySelector('a').onclick = (e) => {
+   let coord = e.target.getBoundingClientRect()
+   let p = document.createElement('p');
+   p.textContent = 'запрещено';
+   p.style.position = 'absolute'
+   p.style.zIndex = 1;
+   p.style.top = coord.y + 'px';
+   p.style.background = 'red';
+   p.style.left = coord.x + 'px';
+   document.body.append(p);
+   setTimeout(() => {
+      p.remove();
+   }, 3000);
+
+   return false;
+}
+
+document.querySelector('a').oncontextmenu = (e) => {
+   let coord = e.target.getBoundingClientRect()
+   let p = document.createElement('p');
+   p.textContent = 'хахаха';
+   p.style.position = 'absolute'
+   p.style.zIndex = 1;
+   p.style.top = coord.y + 'px';
+   p.style.background = 'red';
+   p.style.left = coord.x + 'px';
+   document.body.append(p);
+   setTimeout(() => {
+      p.remove();
+   }, 3000);
+   return false;
+}
+
+document.body.oncopy = (e) => {
+   return false;
+}
+*/
+
+/*
+document.querySelector('span').ondblclick = (e) => {
+   e.target.style.color = 'red';
+   setTimeout(() => {
+      e.target.style.color = ''
+   }, 3000)
+   return false;
+}
+
+document.querySelector('span').onmousedown = () => false;
+*/
+
+/*
+document.querySelector('a').onmousedown = e => {
+   console.log(e.which)
+   return false;
+}
+*/
+
+/*
+document.querySelector('a').onmousedown = e => {
+   console.log("Shift:", e.shiftKey)
+   console.log("Alt:", e.altKey)
+   console.log("Ctrl:", e.ctrlKey)
+}
+*/
+/*
+document.querySelector('div').onmousedown = (e) => {
+   if (e.target.tagName == 'P') {
+      if (e.ctrlKey == true) {
+         e.target.style.background = 'red';
+      } else if (e.ctrlKey == false) {
+         e.target.style.background = 'red';
+      }
    }
 }
+*/
