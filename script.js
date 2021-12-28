@@ -798,7 +798,6 @@ galleryCat.onclick = (e) => {
    if (e.target.tagName == 'IMG') mainImg.src = e.target.src;
 }
 */
-
 /*
 document.querySelector('a').onclick = (e) => {
    let coord = e.target.getBoundingClientRect()
@@ -837,7 +836,6 @@ document.body.oncopy = (e) => {
    return false;
 }
 */
-
 /*
 document.querySelector('span').ondblclick = (e) => {
    e.target.style.color = 'red';
@@ -849,29 +847,62 @@ document.querySelector('span').ondblclick = (e) => {
 
 document.querySelector('span').onmousedown = () => false;
 */
-
 /*
 document.querySelector('a').onmousedown = e => {
    console.log(e.which)
    return false;
 }
 */
-
-/*
+/* 
 document.querySelector('a').onmousedown = e => {
    console.log("Shift:", e.shiftKey)
    console.log("Alt:", e.altKey)
    console.log("Ctrl:", e.ctrlKey)
 }
-*/
-/*
+ */
+//DZ
+
+let prevP;
+let clearBackground = true;
+
 document.querySelector('div').onmousedown = (e) => {
-   if (e.target.tagName == 'P') {
-      if (e.ctrlKey == true) {
+   if (e.ctrlKey == false) {
+      if (clearBackground == false) {
+         console.log(0)
+         for (let i = 0; i < e.path[1].children.length; i++) {
+            e.path[1].children[i].style.background = 'white';
+         }
+      }
+   }
+   if (e.ctrlKey == false) {
+      console.log(1)
+      if (prevP != undefined) {
+         prevP.style.background = 'white';
+         console.log(2)
+      }
+   }
+   if (e.ctrlKey == false) {
+      console.log(3)
+      if (e.target.tagName == 'P') {
          e.target.style.background = 'red';
-      } else if (e.ctrlKey == false) {
+         prevP = e.target;
+         clearBackground = true;
+         console.log(4)
+      }
+   }
+   if (e.ctrlKey == true) {
+      if (clearBackground == true) {
+         console.log(5)
+         for (let i = 0; i < e.path[1].children.length; i++) {
+            e.path[1].children[i].style.background = 'white';
+         }
+      }
+   }
+   if (e.ctrlKey == true) {
+      if (e.target.tagName == 'P') {
          e.target.style.background = 'red';
+         clearBackground = false;
+         console.log(6)
       }
    }
 }
-*/
