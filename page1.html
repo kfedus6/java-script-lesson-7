@@ -422,7 +422,8 @@
          <td>9</td>
       </tr>
    </table>
-
+-->
+   <!--
    <style>
       #catImg {
          width: 600px;
@@ -439,10 +440,6 @@
          height: 140px;
          cursor: pointer;
       }
-
-      .gallery :hover {
-         border: 1px solid red;
-      }
    </style>
 
    <div>
@@ -455,7 +452,8 @@
       <img src="img/cat4.jpg" alt="cat">
       <img src="img/cat5.jpg" alt="cat">
    </div>
-   -->
+-->
+   <!--
    <style>
       a {
          margin-top: 150px;
@@ -464,12 +462,13 @@
 
       div p {
          width: 100px;
+         cursor: pointer;
       }
    </style>
    <a href="#">go youtube</a><br>
    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero voluptate accusamus, harum ratione delectus
       repellat.</span>
-   <div>
+   <div class="tets">
       <p>word</p>
       <p>apple</p>
       <p>banana</p>
@@ -477,6 +476,44 @@
       <p>football</p>
       <p>backetboll</p>
    </div>
+-->
+   <style>
+      .ball {
+         position: absolute;
+         width: 80px;
+         height: 80px;
+         border-radius: 100%;
+         background-color: black;
+      }
+
+      .basket {
+         position: absolute;
+         right: 20px;
+         width: 180px;
+         height: 180px;
+         background-color: grey;
+      }
+
+      .conteiner {
+         display: flex;
+      }
+
+      .sum {
+         position: fixed;
+         right: 250px;
+      }
+   </style>
+   <div class="conteiner">
+      <div class="ball"></div>
+
+      <div class="sum">
+         <p>Корзина: <span>0</span></p>
+      </div>
+
+      <div class="basket"></div>
+
+   </div>
+
    <script src="script.js"></script>
 </body>
 

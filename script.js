@@ -853,7 +853,7 @@ document.querySelector('a').onmousedown = e => {
    return false;
 }
 */
-/* 
+/*
 document.querySelector('a').onmousedown = e => {
    console.log("Shift:", e.shiftKey)
    console.log("Alt:", e.altKey)
@@ -861,7 +861,7 @@ document.querySelector('a').onmousedown = e => {
 }
  */
 //DZ
-
+/*
 let prevP;
 let clearBackground = true;
 
@@ -890,14 +890,14 @@ document.querySelector('div').onmousedown = (e) => {
          console.log(4)
       }
    }
-   if (e.ctrlKey == true) {
-      if (clearBackground == true) {
-         console.log(5)
-         for (let i = 0; i < e.path[1].children.length; i++) {
-            e.path[1].children[i].style.background = 'white';
-         }
-      }
-   }
+   // if (e.ctrlKey == true) {
+   //    if (clearBackground == true) {
+   //       console.log(5)
+   //       for (let i = 0; i < e.path[1].children.length; i++) {
+   //          e.path[1].children[i].style.background = 'white';
+   //       }
+   //    }
+   // }
    if (e.ctrlKey == true) {
       if (e.target.tagName == 'P') {
          e.target.style.background = 'red';
@@ -906,3 +906,98 @@ document.querySelector('div').onmousedown = (e) => {
       }
    }
 }
+*/
+/*
+document.querySelector('div').onmouseover = (e) => {
+   console.log(e.target);
+   console.log(e.relatedTarget)
+}
+*/
+/*
+document.querySelector('span').onmouseout = (e) => {
+   console.log(e.target);
+}
+*/
+/*
+let mainImg = document.querySelector('#catImg');
+let galleryCat = document.querySelector('.gallery');
+
+galleryCat.onmouseover = (e) => {
+   if (e.target.tagName == "IMG") {
+      mainImg.src = e.target.src;
+      e.target.style.border = '1px solid red';
+   }
+}
+
+galleryCat.onmouseout = (e) => {
+   if (e.target.tagName == 'IMG') e.target.style.border = '1px solid grey';
+}
+*/
+/*
+document.querySelector('.tets').onmouseenter = (e) => {
+   console.log(e.target);
+}
+*/
+
+/*
+document.querySelector('.tets').onmouseleave = (e) => {
+   console.log(e.target)
+}
+*/
+
+/*
+document.querySelector('a').onmouseenter = (e) => {
+   let div = document.createElement('div');
+   div.textContent = 'перейти на ютуьб';
+   div.style.background = 'red';
+   div.className = 'text'
+   document.body.append(div);
+   let coords = document.querySelector('a').getBoundingClientRect();
+   div.style.position = 'absolute';
+   div.style.left = coords.x + 'px';
+   div.style.top = coords.y + 'px';
+   console.log(coords)
+}
+
+document.querySelector('a').onmouseleave = (e) => {
+   console.log(1)
+   let del = document.querySelector('.text');
+   del.remove();
+}
+*/
+
+let ball = document.querySelector('.ball')
+let basket = document.querySelector('.basket');
+let sum = document.querySelector('.sum');
+
+
+ball.onmousedown = (e) => {
+
+   function moveAt(pageX, pageY) {
+      ball.style.left = pageX - ball.offsetWidth / 2 + 'px';
+      ball.style.top = pageY - ball.offsetHeight / 2 + 'px';
+   }
+
+   function onMouseMove(e) {
+      moveAt(e.pageX, e.pageY)
+   }
+   ball.style.cursor = 'pointer'
+   ball.style.position = 'absolute';
+   ball.style.zIndex = 1;
+   document.body.append(ball);
+
+   moveAt(e.pageX, e.pageY)
+
+   document.addEventListener('mousemove', onMouseMove);
+
+   ball.onmouseup = () => {
+      document.removeEventListener('mousemove', onMouseMove)
+      ball.onmouseup = null;
+   }
+
+   let basketCoords = basket.getBoundingClientRect();
+   let ballCoord = ball.getBoundingClientRect();
+
+}
+
+
