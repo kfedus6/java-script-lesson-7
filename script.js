@@ -965,10 +965,14 @@ document.querySelector('a').onmouseleave = (e) => {
    del.remove();
 }
 */
-
+//DZ
+/*
 let ball = document.querySelector('.ball')
 let basket = document.querySelector('.basket');
 let sum = document.querySelector('.sum');
+
+let basketCoords = basket.getBoundingClientRect();
+let ballCoord = ball.getBoundingClientRect();
 
 
 ball.onmousedown = (e) => {
@@ -995,9 +999,82 @@ ball.onmousedown = (e) => {
       ball.onmouseup = null;
    }
 
-   let basketCoords = basket.getBoundingClientRect();
-   let ballCoord = ball.getBoundingClientRect();
+   let result = { number: 0 }
 
+   ball.onmouseup = (e) => {
+      if (e.pageX > basketCoords.x) {
+         ball.remove();
+         result.number++;
+         sum.textContent = result.number;
+      }
+   }
 }
+ */
+/*
+document.querySelector('#text').addEventListener('keydown', e => {
+   //+()-
+   console.log(e.key)
+   if (e.key == "+" || e.key == "(" || e.key == ")" || e.key == "-" || !isNaN(parseInt(e.key)) || e.key == "Backspace" || e.key == "ArrowLeft" || e.key == "ArrowRight") {
+      console.log(e.key)
+   } else {
+      e.preventDefault()
+   }
+})
+*/
 
+/*
+addEventListener('keydown', e => {
+   let ball = document.querySelector('.ball')
+   let cs = getComputedStyle(ball)
 
+   let left = parseInt(cs.marginLeft)
+   let top = parseInt(cs.marginTop)
+
+   if (e.key == 'ArrowLeft' && left > 0) {
+      ball.style.marginLeft = left - 10 + 'px';
+   }
+   if (e.key == 'ArrowRight') {
+      ball.style.marginLeft = left + 10 + 'px';
+   }
+   if (e.key == 'ArrowUp') {
+      ball.style.marginTop = top - 10 + 'px';
+   }
+   if (e.key == 'ArrowDown') {
+      ball.style.marginTop = top + 10 + 'px';
+   }
+})
+*/
+//DZ
+/* 
+window.addEventListener('scroll', (e) => {
+   //console.log(pageYOffset)
+   let bottom = document.documentElement.getBoundingClientRect().bottom;
+   let client_H = document.documentElement.clientHeight;
+   let text = document.querySelector('.text');
+   let copeText = text.textContent;
+
+   console.log(bottom);
+   console.log(client_H);
+
+   if (bottom < client_H + 300) {
+      text.textContent = text.textContent + copeText;
+   }
+})
+*/
+
+let width = 300;
+let count = 3;
+let list = document.querySelector('ul');
+let listElems = document.querySelectorAll('li');
+
+let position = 0;
+
+document.querySelector('#prev').onclick = () => {
+   position += width * count;
+   list.style.marginLeft = position + 'px';
+};
+
+document.querySelector('#next').onclick = () => {
+   position -= width * count;
+   list.style.marginLeft = position + 'px';
+};
