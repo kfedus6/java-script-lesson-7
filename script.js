@@ -973,7 +973,8 @@ let sum = document.querySelector('.sum');
 
 let basketCoords = basket.getBoundingClientRect();
 let ballCoord = ball.getBoundingClientRect();
-
+console.log(basketCoords);
+console.log(ballCoord);
 
 ball.onmousedown = (e) => {
 
@@ -994,11 +995,6 @@ ball.onmousedown = (e) => {
 
    document.addEventListener('mousemove', onMouseMove);
 
-   ball.onmouseup = () => {
-      document.removeEventListener('mousemove', onMouseMove)
-      ball.onmouseup = null;
-   }
-
    let result = { number: 0 }
 
    ball.onmouseup = (e) => {
@@ -1006,10 +1002,14 @@ ball.onmousedown = (e) => {
          ball.remove();
          result.number++;
          sum.textContent = result.number;
+      } else {
+         document.removeEventListener('mousemove', onMouseMove)
+         ball.onmouseup = null;
+
       }
    }
 }
- */
+*/
 /*
 document.querySelector('#text').addEventListener('keydown', e => {
    //+()-
@@ -1045,7 +1045,7 @@ addEventListener('keydown', e => {
 })
 */
 //DZ
-/* 
+/*
 window.addEventListener('scroll', (e) => {
    //console.log(pageYOffset)
    let bottom = document.documentElement.getBoundingClientRect().bottom;
@@ -1061,20 +1061,22 @@ window.addEventListener('scroll', (e) => {
    }
 })
 */
-
+//dz
+/*
 let width = 300;
 let count = 3;
-let list = document.querySelector('ul');
-let listElems = document.querySelectorAll('li');
+let ul = document.querySelector('ul');
+let li = document.querySelectorAll('li');
 
 let position = 0;
 
 document.querySelector('#prev').onclick = () => {
    position += width * count;
-   list.style.marginLeft = position + 'px';
+   ul.style.marginLeft = position + 'px';
 };
 
 document.querySelector('#next').onclick = () => {
    position -= width * count;
-   list.style.marginLeft = position + 'px';
-};
+   ul.style.marginLeft = position + 'px';
+};  
+*/
