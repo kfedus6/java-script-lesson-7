@@ -966,50 +966,62 @@ document.querySelector('a').onmouseleave = (e) => {
 }
 */
 //DZ
-/*
-let ball = document.querySelector('.ball')
+
+
 let basket = document.querySelector('.basket');
 let sum = document.querySelector('.sum');
-
+let ball = document.querySelectorAll('.ball')
 let basketCoords = basket.getBoundingClientRect();
-let ballCoord = ball.getBoundingClientRect();
-console.log(basketCoords);
-console.log(ballCoord);
+let listUl = document.querySelector('#list');
+let listLi = document.querySelectorAll('li');
+let result = { number: 0 }
 
-ball.onmousedown = (e) => {
+basket.onclick = () => {
+   listUl.style.visibility = 'visible';
+}
 
-   function moveAt(pageX, pageY) {
-      ball.style.left = pageX - ball.offsetWidth / 2 + 'px';
-      ball.style.top = pageY - ball.offsetHeight / 2 + 'px';
-   }
 
-   function onMouseMove(e) {
+for (let i = 0; i < ball.length; i++) {
+   let ballCoord = ball[i].getBoundingClientRect();
+
+   ball[i].onmousedown = (e) => {
+      console.log(ball[i])
+      function moveAt(pageX, pageY) {
+         ball[i].style.left = pageX - ball[i].offsetWidth / 2 + 'px';
+         ball[i].style.top = pageY - ball[i].offsetHeight / 2 + 'px';
+      }
+
+      function onMouseMove(e) {
+         moveAt(e.pageX, e.pageY)
+      }
+      ball[i].style.cursor = 'pointer'
+      ball[i].style.position = 'absolute';
+      ball[i].style.zIndex = 1;
+
       moveAt(e.pageX, e.pageY)
-   }
-   ball.style.cursor = 'pointer'
-   ball.style.position = 'absolute';
-   ball.style.zIndex = 1;
-   document.body.append(ball);
 
-   moveAt(e.pageX, e.pageY)
+      document.addEventListener('mousemove', onMouseMove);
 
-   document.addEventListener('mousemove', onMouseMove);
+      ball[i].onmouseup = (e) => {
+         console.log(basketCoords.x, basketCoords.y)
+         console.log(e.pageX, e.pageY)
+         if (e.pageX > basketCoords.x && e.pageY < basketCoords.y + basketCoords.height) {
+            ball[i].remove();
+            result.number++;
+            sum.textContent = result.number;
+            let li = document.createElement('li');
+            li.textContent = ball[i].style.backgroundColor;
+            listUl.append(li);
+         } else {
+            document.removeEventListener('mousemove', onMouseMove)
+            ball[i].onmouseup = null;
 
-   let result = { number: 0 }
-
-   ball.onmouseup = (e) => {
-      if (e.pageX > basketCoords.x) {
-         ball.remove();
-         result.number++;
-         sum.textContent = result.number;
-      } else {
-         document.removeEventListener('mousemove', onMouseMove)
-         ball.onmouseup = null;
-
+         }
       }
    }
+
 }
-*/
+
 /*
 document.querySelector('#text').addEventListener('keydown', e => {
    //+()-
@@ -1065,18 +1077,36 @@ window.addEventListener('scroll', (e) => {
 /*
 let width = 300;
 let count = 3;
-let ul = document.querySelector('ul');
-let li = document.querySelectorAll('li');
+
+let listUl = document.querySelector('ul');
+let listLi = document.querySelectorAll('li');
 
 let position = 0;
 
-document.querySelector('#prev').onclick = () => {
+document.querySelector('#prev').onclick = function () {
    position += width * count;
-   ul.style.marginLeft = position + 'px';
+   position = Math.min(position, 0)
+   listUl.style.marginLeft = position + 'px';
 };
 
-document.querySelector('#next').onclick = () => {
+document.querySelector('#next').onclick = function () {
    position -= width * count;
-   ul.style.marginLeft = position + 'px';
-};  
+   position = Math.max(position, -width * (listLi.length - count));
+   listUl.style.marginLeft = position + 'px';
+};
+*/
+//DZ
+/* 
+let img = document.querySelectorAll('img');
+
+window.addEventListener('scroll', (e) => {
+   for (let i = 0; i < img.length; i++) {
+      const coords = img[i].getBoundingClientRect();
+      if (coords.bottom < document.documentElement.clientHeight) {
+         link_img = img[i].getAttribute('src-data');
+         img[i].src = link_img
+         console.log(link_img);
+      }
+   }
+}) 
 */
