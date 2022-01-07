@@ -966,8 +966,7 @@ document.querySelector('a').onmouseleave = (e) => {
 }
 */
 //DZ
-
-
+/*
 let basket = document.querySelector('.basket');
 let sum = document.querySelector('.sum');
 let ball = document.querySelectorAll('.ball')
@@ -976,8 +975,17 @@ let listUl = document.querySelector('#list');
 let listLi = document.querySelectorAll('li');
 let result = { number: 0 }
 
+let checkBasketOpen = false;
 basket.onclick = () => {
-   listUl.style.visibility = 'visible';
+   if (checkBasketOpen) {
+      console.log('1')
+      listUl.style.display = "none"
+      checkBasketOpen = false
+   } else {
+      console.log('2')
+      listUl.style.display = 'block';
+      checkBasketOpen = true
+   }
 }
 
 
@@ -1021,7 +1029,7 @@ for (let i = 0; i < ball.length; i++) {
    }
 
 }
-
+*/
 /*
 document.querySelector('#text').addEventListener('keydown', e => {
    //+()-
@@ -1096,17 +1104,56 @@ document.querySelector('#next').onclick = function () {
 };
 */
 //DZ
-/* 
+/*
 let img = document.querySelectorAll('img');
 
 window.addEventListener('scroll', (e) => {
    for (let i = 0; i < img.length; i++) {
       const coords = img[i].getBoundingClientRect();
-      if (coords.bottom < document.documentElement.clientHeight) {
+      if (coords.bottom < document.documentElement.clientHeight && img[i].src.split('/')[3] == 'loader.svg') {
          link_img = img[i].getAttribute('src-data');
+         console.log(img[i].src.split('/')[3])
          img[i].src = link_img
          console.log(link_img);
       }
    }
-}) 
+})
 */
+
+/*
+const form = document.forms.first;
+const inputLogin = form.elements.login
+console.log(inputLogin)
+*/
+
+//const form = document.forms[0];
+//const inputs = form.elements.mark;
+
+/* change   onchange
+for (let i = 0; i < inputs.length; i++) {
+   inputs[i].onchange = () => {
+      alert(inputs[i].value);
+   }
+}
+*/
+
+/*
+inputs.forEach(item => {
+   item.onclick = () => {
+      alert(item.value);
+   }
+});
+*/
+
+//document.querySelector('#sel').options[1].selected = true
+//document.querySelector('#sel').selectedIndex = 2
+//document.querySelector('#sel').value = "sumsung"
+//console.log(document.querySelector('#sel').options[1].selected)
+
+let op = document.querySelector('#sel')
+
+op.options.forEach(element => {
+   element.onclick = e => {
+      console.log(e.target)
+   }
+});
