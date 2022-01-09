@@ -1148,12 +1148,16 @@ inputs.forEach(item => {
 //document.querySelector('#sel').options[1].selected = true
 //document.querySelector('#sel').selectedIndex = 2
 //document.querySelector('#sel').value = "sumsung"
-//console.log(document.querySelector('#sel').options[1].selected)
+//console.log(document.querySelector('#sel').options[1].selected) 
 
-let op = document.querySelector('#sel')
+let option = document.querySelector('#sel');
 
-op.options.forEach(element => {
-   element.onclick = e => {
-      console.log(e.target)
+option.addEventListener('click', () => {
+   if (option.children[1].selected == true) {
+      document.body.style.backgroundColor = 'black';
+      document.body.style.color = 'white';
+   } else {
+      document.body.style.backgroundColor = 'white';
+      document.body.style.color = 'black';
    }
-});
+})
