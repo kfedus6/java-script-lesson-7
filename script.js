@@ -1148,8 +1148,8 @@ inputs.forEach(item => {
 //document.querySelector('#sel').options[1].selected = true
 //document.querySelector('#sel').selectedIndex = 2
 //document.querySelector('#sel').value = "sumsung"
-//console.log(document.querySelector('#sel').options[1].selected) 
-
+//console.log(document.querySelector('#sel').options[1].selected)
+/*
 let option = document.querySelector('#sel');
 
 option.addEventListener('click', () => {
@@ -1160,4 +1160,58 @@ option.addEventListener('click', () => {
       document.body.style.backgroundColor = 'white';
       document.body.style.color = 'black';
    }
-})
+}) */
+
+/*
+   let word;
+   console.log(e.target.value); //qwe@gmail.com
+   for (symb of e.target.value) {
+      if (symb == '@') {
+         word = symb;
+      }
+   }
+   if (word == '@') {
+      e.target.style.border = "";
+   } else {
+      e.target.style.border = "1px solid red";
+   }
+   */
+
+/*
+let email = document.querySelector('#email');
+email.onblur = (e) => {
+   let form = document.querySelector('.form');
+
+   console.log(form)
+   if (!e.target.value.includes('@')) {
+      e.target.style.border = "1px solid red";
+      let div = document.createElement('div');
+      div.textContent = 'некоретний email';
+      div.style.color = 'red';
+      div.className = 'error';
+      form.append(div)
+   }
+}
+email.onfocus = (e) => {
+   e.target.style.border = "";
+   let err = document.querySelector('.error');
+   if (err != null) {
+      err.remove();
+   }
+}
+
+let password = document.querySelector('#password');
+
+password.onfocus = (e) => {
+   let err = document.querySelector('.error');
+   if (err != null) {
+      email.focus();
+   }
+   if (email.value == '') {
+      email.focus();
+   }
+}
+*/
+//document.querySelector('#password').focus();
+
+//focusin focusout
